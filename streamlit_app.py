@@ -48,8 +48,7 @@ with st.expander('Input Features'):
   input_df
   st.write('**Combined Pengiun Data**')
   input_penguins
-  st.write('**Encoded input Pengiun**')
-  input_row
+  
 
 # Data prep
 
@@ -72,8 +71,11 @@ y = y_raw.apply(target_encode)
 y
 y_raw
 
-
-
+with st.expand('Data Prepration'):
+  st.write('**Encoded X (input Pengiun)**')
+  input_row
+  st.write('**Encoded y**')
+  y
 
 
 
