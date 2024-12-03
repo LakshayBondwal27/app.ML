@@ -10,12 +10,12 @@ with st.expander('Data'):
   df
 
   st.write('**X**')
-  X = df.drop('species' , axis = 1)
-  X
+  X_raw = df.drop('species' , axis = 1)
+  X_raw
 
   st.write('**Y**')
-  y = df.species
-  y
+  y_raw = df.species
+  y_raw
  
 with st.expander('Data Visualization'):
   st.scatter_chart(data = df  , x = 'bill_length_mm' , y = 'body_mass_g' , color = 'species')
@@ -37,13 +37,29 @@ with st.sidebar:
           'bill_length_mm':bill_length_mm,
           'flipper_length_mm':flipper_length_mm,
           'body_mass_g':body_mass_g,
-          'gender':gender
+          'sex':gender
          }
   
   input_df = pd.DataFrame(data , index = [0])
-  input_penguins = pd.concat([input_df , X] , axis = 0)
+  input_penguins = pd.concat([input_df , X_raw] , axis = 0)
 
-input_df
+# encode X
+encode = ['island' , 'sex']
+df_penguins= pd.get_dummies(input_penguins, prefix = encode)
+df_penguins[:1]
+
+# encode y
+
+
+with st.expander('Input Features'):
+  st.write('**Input Pengiuns**')
+  input_df
+  st.write('**Combined Pengiun Data**')
+  input_penguins
+  st.write('**Encoded input Pengiun**')
+
+
+
 
   
 
