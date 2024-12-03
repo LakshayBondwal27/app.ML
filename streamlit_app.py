@@ -61,10 +61,6 @@ encode = ['island' , 'sex']
 df_penguins= pd.get_dummies(input_penguins, prefix = encode)
 input_row = df_penguins[:1]
 
-# encode y
-target_mapper = {'Adelie': 0,
-                 'Chinstrap': 1
-}
 
 
 with st.expander('Input Features'):
