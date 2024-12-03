@@ -22,7 +22,7 @@ with st.expander('Data Visualization'):
 
 # Data prepraation
 
-with st.sidebar():
+with st.sidebar:
   st.header('Input Features')
   island = st.selectbox('Island' , ('Bisoe' , 'Dream' , 'Torgerson ') )
 
