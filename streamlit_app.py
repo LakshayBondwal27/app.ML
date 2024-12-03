@@ -71,11 +71,13 @@ y = y_raw.apply(target_encode)
 y
 y_raw
 
-with st.expand('Data Prepration'):
+with st.expander('Data Prepration'):
   st.write('**Encoded X (input Pengiun)**')
   input_row
   st.write('**Encoded y**')
   y
+
+#model training and frence
 
 
 
